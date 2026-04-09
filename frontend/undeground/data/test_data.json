@@ -1,0 +1,184 @@
+{
+  "hero_drop": [
+    {
+      "id": "drop_001",
+      "image_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop",
+      "badge_text": "WEEKLY DROP",
+      "title_line1": "SYNTH",
+      "title_line2": "WAVE_01",
+      "price": "3 200",
+      "artist": "KAVINSKY",
+      "label": "RECORD MAKERS",
+      "description": "Классика синтвейва на тяжелом 180-граммовом виниле. Ремастеринг 2026 года с расширенным динамическим диапазоном.",
+      "tags": ["#SYNTHWAVE", "#RETRO", "#ELECTRONIC"],
+      "tracklist": [
+        { "side": "A1", "name": "Nightcall", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+        { "side": "A2", "name": "Pacific Coast Highway", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" }
+      ]
+    },
+    {
+      "id": "drop_002",
+      "image_url": "https://images.unsplash.com/photo-1614613535808-3196b0299f01?q=80&w=800&auto=format&fit=crop",
+      "badge_text": "RARE ARCHIVE",
+      "title_line1": "TOKYO",
+      "title_line2": "DRIFT",
+      "price": "5 100",
+      "artist": "TERIYAKI BOYZ",
+      "label": "DEF JAM",
+      "description": "Оригинальный японский пресс. Включает эксклюзивный постер и бонусные ремиксы от The Neptunes.",
+      "tags": ["#HIPHOP", "#JAPAN", "#RARE"],
+      "tracklist": [
+        { "side": "A1", "name": "Tokyo Drift (Fast & Furious)", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" }
+      ]
+    }
+  ],
+  "featured_edition": [
+    {
+      "id": "rec_042",
+      "edition_label": "КОЛЛЕКЦИОННОЕ ИЗДАНИЕ",
+      "title": "BERLIN UNDERGROUND VOL. 1",
+      "description": "Эксклюзивный 180-граммовый полупрозрачный лаймовый винил с неизданными треками берлинского андеграунда.",
+      "price": "4 500",
+      "image_url": "https://images.unsplash.com/photo-1533174000255-598dc4b16212?q=80&w=800&auto=format&fit=crop",
+      "artist": "VARIOUS ARTISTS",
+      "label": "TRESOR RECORDS",
+      "tags": ["#TECHNO", "#BERLIN", "#VINYL_ONLY"],
+      "tracklist": [
+        { "side": "A1", "name": "Kreuzberg Nights", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" }
+      ]
+    },
+    {
+      "id": "rec_043",
+      "edition_label": "КОЛЛЕКЦИОННОЕ ИЗДАНИЕ",
+      "title": "AMBIENT WORKS 85-92",
+      "description": "Ремастеринг легендарного альбома. Лимитированный тираж на белом виниле с альтернативной обложкой.",
+      "price": "6 000",
+      "image_url": "https://images.unsplash.com/photo-1621360811013-c76831f162cb?q=80&w=800&auto=format&fit=crop",
+      "artist": "APHEX TWIN",
+      "label": "APOLLO",
+      "tags": ["#AMBIENT", "#IDM", "#CLASSIC"],
+      "tracklist": [
+        { "side": "A1", "name": "Xtal", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" },
+        { "side": "B1", "name": "Pulsewidth", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" }
+      ]
+    }
+  ],
+  "nearby_shops": [
+    {
+      "id": "shop_01",
+      "name": "SONIC BOOM RECORDS",
+      "specialty": "RARE GROOVES & IDM",
+      "distance": "0.4KM AWAY",
+      "description": "Curated collection of Rare Grooves, IDM, and Tokyo Imports. Лучший выбор электронной музыки в центре.",
+      "tags": ["#HOUSE", "#VINYL_ONLY", "#IDM"], 
+      "image_url": "https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=800&auto=format&fit=crop",
+      "coordinates": {
+        "latitude": 55.7558,
+        "longitude": 37.6173
+      }
+    },
+    {
+      "id": "shop_02",
+      "name": "BLACK HOLE WAX",
+      "specialty": "TECHNO & DARK AMBIENT",
+      "distance": "1.2KM AWAY",
+      "description": "Подвальный магазин для ценителей жесткого техно, индастриала и дарк эмбиента.",
+      "tags": ["#TECHNO", "#DARK_AMBIENT", "#INDUSTRIAL"], 
+      "image_url": "https://images.unsplash.com/photo-1460500063983-994d4c27756c?q=80&w=800&auto=format&fit=crop",
+      "coordinates": {
+        "latitude": 55.7600,
+        "longitude": 37.6200
+      }
+    },
+    {
+      "id": "shop_03",
+      "name": "WAX_VAULT",
+      "specialty": "90S HIP-HOP & FUNK",
+      "distance": "3.5KM AWAY",
+      "description": "Specializing in 90s hip-hop and funk vinyl records. Настоящий рай для биг-битмейкеров и диджеев.",
+      "tags": ["#HIPHOP", "#FUNK", "#90S"],
+      "image_url": "https://images.unsplash.com/photo-1460500063983-994d4c27756c?q=80&w=800&auto=format&fit=crop",
+      "coordinates": {
+        "latitude": 55.7658,
+        "longitude": 37.6273
+      }
+    }
+  ],
+  "active_threads": [
+    {
+      "id": "thread_101",
+      "title": "Best needles for scratching high-weight vinyl?",
+      "replies_count": 42,
+      "rating": 156,
+      "border_color": "#cffc00",
+      "tags": ["GEAR", "DJ"]
+    },
+    {
+      "id": "thread_102",
+      "title": "Identifying original pressing of Tatsuro Yamashita",
+      "replies_count": 18,
+      "rating": -12,
+      "border_color": "#ff51fa",
+      "tags": ["CITY_POP", "IDENTIFICATION"]
+    }
+  ],
+  "discovery_filters": [
+    "ALL DIGS", 
+    "TECHNO", 
+    "DARK AMBIENT", 
+    "DUBSTEP", 
+    "PHONK",
+    "JAZZ"
+  ],
+  "discovery_records": [
+    {
+      "id": "wax_001",
+      "title": "CYBER_STORM.WAV",
+      "subtitle": "LIMITED EDITION PRESSING",
+      "price": "3 800",
+      "image_url": "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop",
+      "badge_text": "NEW RELEASE",
+      "badge_color": "#8A2BE2",
+      "artist": "NEON VANDALS",
+      "label": "CYBER PUNK RECORDS",
+      "description": "Ультимативный саундтрек для ночных поездок. Плотный басс и синтезаторы.",
+      "tags": ["#SYNTHWAVE", "#PHONK", "#NEW"],
+      "tracklist": [
+        { "side": "A1", "name": "Cyber Storm", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" },
+        { "side": "A2", "name": "Neon Tears", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" }
+      ]
+    },
+    {
+      "id": "wax_002",
+      "title": "ORBITAL ECHOES",
+      "subtitle": "VINTAGE STOCK",
+      "price": "8 200",
+      "image_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop",
+      "badge_text": "RARE",
+      "badge_color": "#4a4a4a",
+      "artist": "COSMIC FORCES",
+      "label": "SPACE WAX",
+      "description": "Редчайший эмбиент альбом 1994 года. Идеальное состояние (Mint).",
+      "tags": ["#AMBIENT", "#VINTAGE", "#RARE"],
+      "tracklist": [
+        { "side": "A1", "name": "Echoes in the Void", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" }
+      ]
+    },
+    {
+      "id": "wax_003",
+      "title": "VOID_TECH",
+      "subtitle": "200G HEAVYWEIGHT",
+      "price": "1 500",
+      "image_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop",
+      "badge_text": "SALE",
+      "badge_color": "#D1FF00",
+      "artist": "INDUSTRIAL GHOSTS",
+      "label": "METAL BEATS",
+      "description": "Грязный индастриал на сверхтяжелом 200-граммовом виниле.",
+      "tags": ["#INDUSTRIAL", "#TECHNO", "#SALE"],
+      "tracklist": [
+        { "side": "A1", "name": "Factory Reset", "duration": "0:30", "preview_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" }
+      ]
+    }
+  ]
+}
