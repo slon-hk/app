@@ -1,0 +1,15 @@
+# зависимости
+node_modules/
+
+# expo служебные файлы
+.expo/
+
+# кеши и сборки
+dist/
+build/
+
+# системные файлы
+.DS_Store
+
+# env
+.env
