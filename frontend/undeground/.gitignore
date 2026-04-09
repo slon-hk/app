@@ -1,0 +1,15 @@
+/.expo
+/node_modules
+/.expo-shared
+/dist
+/build
+/.vscode
+/.idea
+/.DS_Store
+*.log
+*.lock
+*.tmp
+*.bak
+*.swp
+*.swo
+*.env
