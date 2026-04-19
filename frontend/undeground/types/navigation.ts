@@ -2,12 +2,23 @@ import { NavigatorScreenParams } from '@react-navigation/native';
 
 // Типы для Stack Navigator
 export type RootStackParamList = {
+  Auth: NavigatorScreenParams<AuthStackParamList>;
   MainTabs: NavigatorScreenParams<MainTabParamList>;
   ItemDetail: { id: string };
-  AllThreads: undefined; // Экран списка всех тредов
-  ThreadDetail: undefined; // Экран подробностей треда
-  ShopDetail: { id: string }; // Экран подробностей магазина
+  AllThreads: undefined;
+  ThreadDetail: undefined;
+  ShopDetail: { id: string };
   Cart: undefined;
+  Notifications: undefined;
+  NotificationDetail: { id: string };
+  PublicProfile: { userId: string };
+  CreateThread: undefined;
+};
+
+// Типы для Auth Stack Navigator
+export type AuthStackParamList = {
+  Login: undefined;
+  Register: undefined;
 };
 
 // Типы для Tab Navigator

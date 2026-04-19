@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'; // Обязательный импорт для работы жестов
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native'; 
+import { StyleSheet, View, Text, ActivityIndicator } from 'react-native'; 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -19,11 +19,16 @@ import ThreadDetailScreen from './screen/ThreadDetailScreen';
 import ShopDetailScreen from './screen/ShopDetailScreen';
 import NotificationsScreen from './screen/NotificationsScreen';
 import NotificationDetailScreen from './screen/NotificationDetailScreen';
+import PublicProfileScreen from './screen/PublicProfileScreen';
+import CreateThreadScreen from './screen/CreateThreadScreen';
+import LoginScreen from './screen/LoginScreen';
+import RegisterScreen from './screen/RegisterScreen';
 
 import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
 import { NotificationProvider } from './context/NotificationContext';
 import { PreorderProvider } from './context/PreorderContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 
 // Импорт типов навигации
 import { RootStackParamList, MainTabParamList } from './types/navigation';
@@ -47,36 +52,80 @@ function MainTabs() {
   );
 }
 
+// Auth Stack for Login/Register
+function AuthStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        animationEnabled: true,
+      }}
+    >
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
+    </Stack.Navigator>
+  );
+}
+
+// Main App Navigator
+function RootNavigator() {
+  const { isSignedIn, isLoading } = useAuth();
+
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#00bfff" />
+      </View>
+    );
+  }
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {isSignedIn ? (
+          // App Stack - только если пользователь авторизован
+          <Stack.Group>
+            {/* Главный экран приложения — это наши вкладки с нижним меню */}
+            <Stack.Screen name="MainTabs" component={MainTabs} />
+            
+            {/* Страницы, которые открываются ПОВЕРХ нижнего меню */}
+            <Stack.Screen name="AllThreads" component={AllThreadsScreen} />
+            <Stack.Screen name="ThreadDetail" component={ThreadDetailScreen} />
+            <Stack.Screen name="ItemDetail" component={ItemDetailScreen} />
+            <Stack.Screen name="ShopDetail" component={ShopDetailScreen} />
+            <Stack.Screen name="Cart" component={CartScreen} />
+            <Stack.Screen name="Notifications" component={NotificationsScreen} />
+            <Stack.Screen name="PublicProfile" component={PublicProfileScreen} />
+            <Stack.Screen name="NotificationDetail" component={NotificationDetailScreen} />
+            <Stack.Screen name="CreateThread" component={CreateThreadScreen} />
+          </Stack.Group>
+        ) : (
+          // Auth Stack
+          <Stack.Group screenOptions={{ animationEnabled: false }}>
+            <Stack.Screen name="Auth" component={AuthStack} />
+          </Stack.Group>
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
 // 2. В главном App используем Stack.Navigator
 export default function App() {
   return (
     // Оборачиваем всё приложение в GestureHandlerRootView со стилем flex: 1
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <NotificationProvider>
-        <FavoritesProvider>
-          <CartProvider>
-            <PreorderProvider>
-              <NavigationContainer>
-                <Stack.Navigator screenOptions={{ headerShown: false }}>
-                  {/* Главный экран приложения — это наши вкладки с нижним меню */}
-                  <Stack.Screen name="MainTabs" component={MainTabs} />
-                  
-                  {/* Страницы, которые открываются ПОВЕРХ нижнего меню */}
-                  <Stack.Screen name="AllThreads" component={AllThreadsScreen} />
-                  <Stack.Screen name="ThreadDetail" component={ThreadDetailScreen} />
-                  <Stack.Screen name="ItemDetail" component={ItemDetailScreen} />
-                  <Stack.Screen name="ShopDetail" component={ShopDetailScreen} />
-                  <Stack.Screen name="Cart" component={CartScreen} />
-                  <Stack.Screen name="Notifications" component={NotificationsScreen} />
-                  
-                  {/* Не забываем добавить экран деталей уведомления */}
-                  <Stack.Screen name="NotificationDetail" component={NotificationDetailScreen} />
-                </Stack.Navigator>
-              </NavigationContainer>
-            </PreorderProvider>
-          </CartProvider>
-        </FavoritesProvider>
-      </NotificationProvider>
+      <AuthProvider>
+        <NotificationProvider>
+          <FavoritesProvider>
+            <CartProvider>
+              <PreorderProvider>
+                <RootNavigator />
+              </PreorderProvider>
+            </CartProvider>
+          </FavoritesProvider>
+        </NotificationProvider>
+      </AuthProvider>
     </GestureHandlerRootView>
   );
 }
@@ -94,5 +143,11 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     fontStyle: 'italic',
     textTransform: 'uppercase',
-  }
+  },
+  loadingContainer: {
+    flex: 1,
+    backgroundColor: '#0a0a0a',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
