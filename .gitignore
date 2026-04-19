@@ -1,0 +1,56 @@
+# Общие системные и временные файлы
+.DS_Store
+Thumbs.db
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.sqlite
+*.env
+.env.*
+venv/
+.venv/
+backend/venv/
+backend/.venv/
+
+# Backend данные и локальные файлы
+backend/groovesync.db
+backend/*.sqlite3
+backend/*.db
+backend/*.log
+backend/*.env
+
+# Node / Expo
+node_modules/
+frontend/undeground/node_modules/
+frontend/undeground/.expo/
+frontend/undeground/dist/
+frontend/undeground/build/
+frontend/undeground/web-build/
+frontend/undeground/npm-debug.log*
+frontend/undeground/yarn-debug.log*
+frontend/undeground/yarn-error.log*
+frontend/undeground/pnpm-debug.log*
+
+# Docker
+docker-compose.override.yml
+*.local.yml
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.lock-wscript
+
+# Misc
+*.pem
+*.key

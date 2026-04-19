@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:15
+    container_name: mobapp_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mobapp
+      POSTGRES_PASSWORD: mobapp_password
+      POSTGRES_DB: mobapp
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: mobapp_backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://mobapp:mobapp_password@db:5432/mobapp
+      SECRET_KEY: replace-with-a-secure-key
+      ACCESS_TOKEN_EXPIRE_MINUTES: "43200"
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  db_data:

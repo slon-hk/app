@@ -1,5 +1,36 @@
-from pydantic import BaseModel, HttpUrl
+from pydantic import BaseModel, HttpUrl, EmailStr
 from typing import List, Optional
+from datetime import datetime
+
+# --- Аутентификация ---
+
+class UserRegister(BaseModel):
+    username: str
+    email: EmailStr
+    password: str
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+
+class UserLogin(BaseModel):
+    email: str
+    password: str
+
+class UserResponse(BaseModel):
+    id: str
+    username: str
+    email: str
+    first_name: Optional[str]
+    last_name: Optional[str]
+    avatar_url: Optional[str]
+    created_at: datetime
+    is_active: int
+    class Config:
+        from_attributes = True
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
+    user: UserResponse
 
 # --- Вспомогательные модели ---
 
@@ -26,6 +57,15 @@ class FeaturedEdition(BaseModel):
     price: str
     class Config:
         from_attributes = True
+
+class ShopCreate(BaseModel):
+    name: str
+    specialty: str
+    distance: str
+    description: str
+    tags: List[str]
+    image_url: str
+    coordinates: Coordinates
 
 class Shop(BaseModel):
     id: str
